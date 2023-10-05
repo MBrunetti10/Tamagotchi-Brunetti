@@ -9,7 +9,7 @@ const heading = document.getElementById("heading")
 const feedBtn = document.getElementById("feed-btn")
 const playBtn = document.getElementById("play-btn")
 const sleepBtn = document.getElementById("sleep-btn")
-
+const avatar = document.getElementById("avatar")
 
 // set our class.
 class Tamagotchi {
@@ -81,18 +81,22 @@ let seconds = 0
         if(newTamagotchi.age === 10){
             alert("You win, baby!")
             clearInterval(interval)
+            avatar.classList.remove("animate")
         }
         if(newTamagotchi.boredom >= 10){
             alert("Your pet hates you. RIP")
             clearInterval(interval)
+            avatar.classList.remove("animate")
         }
         if(newTamagotchi.sleepiness >= 10 ){
             alert("Your pet has died from exhaustion")
             clearInterval(interval)
+            avatar.classList.remove("animate")
         }
         if(newTamagotchi.hunger >= 10 ){
             alert("Your pet has died from starvation")
             clearInterval(interval)
+            avatar.classList.remove("animate")
         }
     }
     
@@ -110,6 +114,10 @@ let seconds = 0
         if (seconds%15==0){
             newTamagotchi.age += 1
             updateUI()
+        }
+        //changing to fox at age 5; he's a big boy!
+        if(newTamagotchi.age === 5){
+            avatar.innerHTML = "&#129418;"
         }
         checkEnd()
     }

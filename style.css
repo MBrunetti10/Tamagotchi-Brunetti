@@ -1,3 +1,16 @@
+
+@keyframes grow {
+    0% {
+        font-size: 100px;
+    }
+    50% {
+        font-size: 125px;
+    }
+    100% {
+        font-size: 100px;
+    }
+    
+}
 body {
     min-height: 100vh;
     background-color: hsl(224,26%,31%);
@@ -25,6 +38,17 @@ h1 {
   max-width: 520px;
   border-radius: 1rem;
   margin-bottom: 1rem;
+  position: relative;
+}
+#avatar{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    animation: 3s grow linear infinite;
+}
+.animate{
+    animation: 3s grow linear infinite;
 }
 
 h2 {
